@@ -22,7 +22,9 @@ const path = require('path');
 }
 */
 
-/* css-loaders */
+/* css-loaders, style-loader y  extract-text-webpack-plugin */
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: path.resolve(__dirname, 'index.js'),
   output: {
@@ -33,8 +35,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }),
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('css/[name].css') //name permite uusar el nombre original del entrypoint
+  ]
 }
+
+/* Con este modulo podemos generar un file para los styles extract-text-webpack-plugin y se agregar al config como un plugin */
+// https://www.npmjs.com/package/extract-text-webpack-plugin
