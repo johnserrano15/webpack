@@ -1,3 +1,3 @@
 import '../css/style.css'
 
-document.write('Hola Precios!');
+document.write('Hola Precios :D!');

@@ -81,7 +81,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 document.write('Hola mundo!');
 
-console.log('Hola mundo! :) -_- World ');
+console.log('Hola mundo! webpack dev server :) -_- World ');
 
 
 /***/ })

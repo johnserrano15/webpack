@@ -52,7 +52,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 /* Múltiples entry points */
-module.exports = {
+/*module.exports = {
   entry: {
     home: path.resolve(__dirname, 'src/js/index.js'),
     precios: path.resolve(__dirname, 'src/js/precios.js'),
@@ -75,5 +75,33 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('css/[name].css') //name permite uusar el nombre original del entrypoint
+  ]
+}*/
+
+/* Webpack dev-server */
+module.exports = {
+  entry: path.resolve(__dirname, 'src/js/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: path.join(__dirname, './'),
+    compress: true,
+    port: 8080, // por default es 8080
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }),
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('css/styles.css') //name permite uusar el nombre original del entrypoint
   ]
 }
