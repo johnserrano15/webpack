@@ -12,6 +12,8 @@
   "author": "John Serrano",
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^3.10.0"
+    "css-loader": "0.28.8",
+    "style-loader": "0.19.1",
+    "webpack": "3.10.0"
   }
 }

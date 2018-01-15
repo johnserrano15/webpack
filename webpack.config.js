@@ -7,14 +7,34 @@ const path = require('path');
   output: {
     filename: 'bundle.js'
   }
+}*/
+
+/* Nota: se debe correr webpack en la terminal ya que le estamos indicando el dist de donde se debe generar el bundle.js */
+
+/* Usando path crea una carpeta de name dist y dentro genera el bundle.js*/
+
+/*module.exports = {
+  entry: path.resolve(__dirname, 'index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  }
 }
 */
 
-/* Usando path crea una carpeta de name dist y dentro genera el bundle.js*/
+/* css-loaders */
 module.exports = {
   entry: path.resolve(__dirname, 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ],
+      }
+    ]
   }
 }
