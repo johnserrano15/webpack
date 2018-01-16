@@ -65,24 +65,42 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_style_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_style_css__);
 
 
-document.write('Hola mundo! webpack dev server');
+__webpack_require__(1);
 
-console.log('Hola mundo! webpack dev server :) -_- World ');
+var _message = __webpack_require__(6);
 
+document.write('Hola mundo! webpack dev server -_-');
+// import message from 'message.js'
+
+document.write(_message.firstMessage);
+
+console.log('Hola mundo! webpack dev server World ');
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  firstMessage: 'Hola mundo desde un module'
+};
 
 /***/ })
 /******/ ]);
