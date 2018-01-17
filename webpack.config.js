@@ -138,7 +138,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
   ]
 }*/
 
-/* Webpack imagenes */
+/* Webpack imagenes es mejor usar file-loader */
 module.exports = {
   entry: path.resolve(__dirname, 'src/js/index.js'),
   output: {
@@ -164,6 +164,42 @@ module.exports = {
             limit: 100000,
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }),
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('css/styles.css') //name permite uusar el nombre original del entrypoint
+  ]
+}
+
+/* json-loader */
+module.exports = {
+  entry: path.resolve(__dirname, 'src/js/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'es2016']
+          }
+        }
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
       },
       {
         test: /\.css$/,

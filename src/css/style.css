@@ -6,5 +6,6 @@ body {
   min-height: 100vh;
   margin: 0;
   font-size: 40px;
-  background-image: url('../../niños.jpg');
+  flex-direction: column;
+  /*background-image: url('../../niños.jpg');*/
 }
