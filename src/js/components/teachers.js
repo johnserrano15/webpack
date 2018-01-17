@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import Teacher from './teacher'
+import '../../css/style.sass'
 
 /* mas info -> https://reactjs.org/docs/lists-and-keys.html */
 class Teachers extends Component {

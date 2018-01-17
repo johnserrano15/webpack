@@ -217,6 +217,43 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 }*/
 
 /* Configurando react.js */
+/*module.exports = {
+  entry: path.resolve(__dirname, 'src/js/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'es2016', 'react']
+          }
+        }
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }),
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('css/styles.css') //name permite uusar el nombre original del entrypoint
+  ]
+}*/
+
+/* Config sass */
+// mas info -> https://github.com/webpack-contrib/sass-loader
 module.exports = {
   entry: path.resolve(__dirname, 'src/js/index.js'),
   output: {
@@ -243,6 +280,13 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: 'css-loader'
+        }),
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
         }),
       }
     ]
