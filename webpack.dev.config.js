@@ -1,27 +1,20 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 /* css-loaders, style-loader y  extract-text-webpack-plugin */
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /* 
-  Config Advanced 
-
-  Nota: tener en cuenta que hay que correr primero webpack solo si se esta,
-  trabajando con webpack-dev-server
-  No se puede trabajar con webpack-dev-server de esta forma.
+  Config Advanced dev
 */
 module.exports = {
   entry: {
-    // vendor: [
-    //   'react',
-    //   'react-dom',
-    // ],
     home: path.resolve(__dirname, 'src/js/index.js'),
     contacto: path.resolve(__dirname, 'src/js/contacto.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: 'js/[name].js',
+    publicPath: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     contentBase: path.resolve(__dirname, './'),
@@ -42,6 +35,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
+        exclude: /(node_modules)/,
         use: 'json-loader'
       },
       {
@@ -62,12 +56,5 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('css/styles.css'),
-    // new webpack.optimize.CommosChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: Infinity
-    // })
-    new webpack.DllReferencePlugin({
-      manifest: require('./dist/modules-manifest.json')
-    })
   ]
 }
