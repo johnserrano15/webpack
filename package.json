@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack index.js bundle.js",
-    "build:dev": "webpack -w",
     "build:server": "webpack-dev-server",
-    "build:babel": "webpack-dev-server --progress --colors -w"
+    "build:dll": "webpack --config ./webpack.dll.config.js --progress --colors",
+    "build:dev": "webpack --config ./webpack.dev.config.js --progress --colors -w"
   },
   "keywords": [],
   "author": "John Serrano",
