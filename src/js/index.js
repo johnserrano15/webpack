@@ -12,7 +12,7 @@ import Teachers from './components/teachers'
 render(<Teachers data={ data } />, document.getElementById('container'))
 
 
-console.log(data)
+console.log(`Esta es la data -> ${data}`)
 
 // data.teachers.forEach((teacher) => {
 //   const element = document.createElement('li');

@@ -8,7 +8,7 @@
     "build": "webpack index.js bundle.js",
     "build:dev": "webpack -w",
     "build:server": "webpack-dev-server",
-    "build:babel": "webpack-dev-server --progress --colors -w"
+    "build:babel": "webpack-dev-server --progress --colors"
   },
   "keywords": [],
   "author": "John Serrano",
