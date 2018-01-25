@@ -14,11 +14,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-    publicPath: path.resolve(__dirname, 'dist'),
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './'),
-    compress: true,
     port: 9000
   },
   module: {
@@ -40,6 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /(node_modules)/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: 'css-loader'
@@ -47,6 +45,7 @@ module.exports = {
       },
       {
         test: /\.(sass|scss)$/,
+        exclude: /(node_modules)/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
