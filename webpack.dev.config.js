@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /* 
   Config Advanced dev
+  Nota: siempre hay que copilar webpack la primera vez y luego si correr webpack-dev-server
 */
 module.exports = {
   entry: {
@@ -54,6 +55,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('css/styles.css'),
+    new ExtractTextPlugin('css/[name].css'),
   ]
 }
