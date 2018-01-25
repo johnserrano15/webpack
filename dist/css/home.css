@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 40px;
+  flex-direction: column;
+  /*background-image: url('../../niños.jpg');*/
+}
+.teachers {
+  background-color: #8bbd8b; }
+  .teachers .teacher {
+    color: white;
+    list-style: none; }
+    .teachers .teacher a {
+      text-decoration: none;
+      color: white; }

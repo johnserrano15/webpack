@@ -6,9 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /* 
   Config Advanced 
 
-  Nota: tener en cuenta que hay que correr primero webpack solo si se esta,
-  trabajando con webpack-dev-server
-  No se puede trabajar con webpack-dev-server de esta forma.
+  Nota: tener en cuenta que hay que correr primero webpack y luego webpack-dev-server
 */
 module.exports = {
   entry: {
@@ -24,7 +22,6 @@ module.exports = {
     filename: '[name].js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './'),
     compress: true,
     port: 9000
   },
@@ -61,7 +58,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('css/styles.css'),
+    new ExtractTextPlugin('css/[name].css'),
     // new webpack.optimize.CommosChunkPlugin({
     //   name: 'vendor',
     //   minChunks: Infinity

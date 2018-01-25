@@ -11,7 +11,6 @@ import Teachers from './components/teachers'
 
 render(<Teachers data={ data } />, document.getElementById('container'))
 
-
 // console.log(`Hola somos los teachers ${data}`);
 
 // data.teachers.forEach((teacher) => {
