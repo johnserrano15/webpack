@@ -1,0 +1,1 @@
+body{display:flex;align-items:center;justify-content:center;background:gray;min-height:100vh;margin:0;font-size:40px;flex-direction:column}.teachers{background-color:#8bbd8b;padding:20px;border-radius:5px}.teachers .teacher{color:#fff;list-style:none}.teachers .teacher a{text-decoration:none;color:#fff;margin-left:50px}
